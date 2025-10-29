@@ -1,20 +1,37 @@
-/* ===============================
-   Exercise 5-1: Town Hall Styles
-   =============================== */
+/* =========================================
+   A07 - San Joaquin Valley Town Hall
+   Enhanced and polished by Hennessy Lopez
+   ========================================= */
 
-/* Color variables */
+/* ----------- Global Variables ----------- */
 :root {
   --accent-color: #006699;
+  --text-color: #222;
+  --background-color: #ffffff;
+  --font-family: "Segoe UI", Arial, Helvetica, sans-serif;
 }
 
-/* ===== 1. Reset selector ===== */
+/* ----------- CSS Reset ----------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ===== 2. Default styles ===== */
+/* ----------- Base Styles ----------- */
+body {
+  width: 80%;
+  margin: 0 auto;
+  padding: 1.5em;
+  font-family: var(--font-family);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  border: 2px solid var(--accent-color);
+}
+
+/* ----------- Default Spacing ----------- */
 h1, h2, h3, p, ul {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
@@ -24,58 +41,89 @@ ul {
   margin-left: 2em;
 }
 
-/* ===== 3. Body layout ===== */
-body {
-  width: 80%;
-  margin: 0 auto;
-  border: 2px solid var(--accent-color);
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.5;
-}
-
-/* ===== 4. Header ===== */
+/* ----------- Header Section ----------- */
 header {
+  text-align: center;
   border-bottom: 2px solid var(--accent-color);
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 1em;
+  padding-bottom: 1em;
 }
 
 header img {
-  margin: 0.75em 1em;
+  display: block;
+  margin: 0.75em auto;
+  width: 100px;
+  height: auto;
 }
 
-header h2, header h3 {
-  margin-left: 0.5em;
+header h2 {
+  font-size: 1.8rem;
+  color: var(--accent-color);
+  letter-spacing: 0.5px;
 }
 
-/* ===== 5. Main content ===== */
+header h3 {
+  font-size: 1.2rem;
+  color: #555;
+  font-weight: normal;
+}
+
+/* ----------- Main Content ----------- */
 main {
-  padding: 1em;
+  padding: 1.5em 1em;
 }
 
 main h1 {
   border-top: 2px solid var(--accent-color);
   border-bottom: 2px solid var(--accent-color);
-  margin-top: 1em;
-  margin-bottom: 0.5em;
+  color: var(--accent-color);
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+p, li, blockquote {
+  max-width: 65ch;
+  margin: 0 auto;
 }
 
 blockquote {
-  margin-left: 2em;
   font-style: italic;
   color: #444;
+  border-left: 4px solid var(--accent-color);
+  padding-left: 1em;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
 }
 
-/* ===== 6. Footer ===== */
+/* ----------- Footer Section ----------- */
 footer {
   background-color: var(--accent-color);
   padding: 1em;
   text-align: center;
+  border-top: 2px solid var(--accent-color);
 }
 
 footer p {
-  color: white;
-  font-size: 0.9em;
+  color: #ffffff;
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
+}
+
+/* ----------- Responsive Design ----------- */
+@media (max-width: 768px) {
+  body {
+    width: 95%;
+    padding: 1em;
+  }
+
+  header img {
+    width: 80px;
+  }
+
+  main h1 {
+    font-size: 1.2rem;
+  }
 }
